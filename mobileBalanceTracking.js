@@ -17,16 +17,25 @@ function makeCall(duration, rate) {
       "and balance is",
       mobileBal
     );
-  } else {
+  } else if (mobileBal == 0) {
     console.log(
       "The call is failed due to insufficient balance, the available balance is",
       mobileBal
     );
+  } else {
+    console.log(
+      "You will get a talktime of only",
+      mobileBal / rate,
+      "minutes please reacharge",
+      (duration - mobileBal / rate) * rate,
+      "rupees for the complete converstion"
+    );
   }
 }
 
-makeCall(55, 0.9);
-makeCall(31, 0.5);
-makeCall(78, 0.08);
-makeCall(780, 0.06);
-makeCall(150, 0.000004);
+// makeCall(55, 0.9);
+makeCall(31, 2);
+// makeCall(78, 0.08);
+makeCall(50, 20);
+// makeCall(780, 0.06);
+// makeCall(150, 0.000004);
